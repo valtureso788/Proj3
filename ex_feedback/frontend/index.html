@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EX — Отзывы</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>⭐ Система отзывов</h1>
+
+  <!-- ===== Товары (готово) ===== -->
+  <section class="products-bar" id="products-bar">
+    <!-- кнопки товаров появятся динамически -->
+  </section>
+
+  <div class="main-grid">
+    <!-- ===== Отзывы (задание) ===== -->
+    <section class="reviews-section">
+      <h2>Отзывы</h2>
+
+      <p class="hint">⚠️ Отзывы появятся, когда допишешь GET /api/reviews/ на бэкенде и loadReviews() в app.js</p>
+
+      <div id="reviews-list" class="reviews-list">
+        <!-- отзывы появятся динамически -->
+      </div>
+    </section>
+
+    <!-- ===== Статистика + форма (задание) ===== -->
+    <aside>
+      <!-- Статистика -->
+      <section class="stats-section">
+        <h2>📊 Статистика</h2>
+
+        <p class="hint">⚠️ Заработает после GET /api/reviews/stats</p>
+
+        <div id="stats-block" class="stats-block">
+          <div class="avg-rating">
+            <span id="avg-num">0.0</span>
+            <div id="avg-stars" class="stars">☆☆☆☆☆</div>
+          </div>
+          <div id="stars-breakdown" class="stars-breakdown">
+            <!-- полоски 5★ ... 1★ -->
+          </div>
+          <p id="total-reviews" class="total-reviews">0 отзывов</p>
+        </div>
+      </section>
+
+      <!-- Форма отзыва -->
+      <section class="form-section">
+        <h2>✍️ Написать отзыв</h2>
+
+        <p class="hint">⚠️ Заработает после POST /api/reviews/</p>
+
+        <form id="review-form">
+          <input id="review-author" type="text" placeholder="Твоё имя" required />
+          <textarea id="review-text" placeholder="Напиши отзыв..." required></textarea>
+
+          <div class="star-picker" id="star-picker">
+            <span class="pick-star" data-value="1">★</span>
+            <span class="pick-star" data-value="2">★</span>
+            <span class="pick-star" data-value="3">★</span>
+            <span class="pick-star" data-value="4">★</span>
+            <span class="pick-star" data-value="5">★</span>
+          </div>
+          <input type="hidden" id="review-rating" value="0" />
+
+          <button type="submit">Отправить отзыв</button>
+        </form>
+      </section>
+    </aside>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
